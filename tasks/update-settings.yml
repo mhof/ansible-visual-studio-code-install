@@ -1,0 +1,13 @@
+---
+- name: Make sure settings directory exist
+  file:
+    path: '~/.config/Code/User'
+    state: directory
+    mode: 'u=rwx,go='
+
+- name: Update settings
+  template:
+    src: settings.json.j2
+    dest: '~/.config/Code/User/settings.json'
+    force: no
+    mode: 'u=rw,go='

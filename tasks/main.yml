@@ -1,0 +1,7 @@
+---
+- include: install.yml
+  become: yes
+
+- include: install-extensions.yml
+
+- include: update-settings.yml

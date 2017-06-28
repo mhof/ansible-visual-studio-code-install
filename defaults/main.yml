@@ -1,0 +1,28 @@
+---
+# Package name for Visual Studio Code
+visual_studio_code_package: code
+
+# Extensions to install
+vs_code_extensions:
+  - timonwong.ansible-autocomplete
+  - dhoeric.ansible-vault
+  - haaaad.ansible
+  - PeterJausovec.vscode-docker
+  - henriiik.docker-linter
+  - donjayamanne.githistory
+  - eamodio.gitlens
+  - felipecaputo.git-project-manager
+  - codezombiech.gitignore
+  - wholroyd.jinja
+  - donjayamanne.python
+  - tht13.python
+  - himanoa.python-autopep8
+  - jaysonsantos.vscode-flake8
+  - hnw.vscode-auto-open-markdown-preview
+
+# VSCode settings
+vs_code_font: 12
+
+vs_code_gpm_base_project_folders:
+  - "~/git/ansible"
+  - "~/git/private"

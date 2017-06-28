@@ -1,0 +1,13 @@
+---
+- name: Create Visual Studio Code directory
+  file:
+    path: "~/.config/Code/User"
+    state: directory
+    mode: 'u=rwx,go='
+
+- name: Install extensions
+  command: "code --install-extension '{{ item }}'"
+  with_items:
+    - "{{ vs_code_extensions }}"
+  register: vscode_result
+  changed_when: "'already installed' not in vscode_result.stdout"

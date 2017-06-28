@@ -1,0 +1,22 @@
+---
+- name: Import microsoft rpm key
+  rpm_key:
+    state: present
+    key: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Add VSCode repo
+  yum_repository:
+    name: vscode
+    description: VSCode YUM repo
+    file: vscode
+    baseurl: https://packages.microsoft.com/yumrepos/vscode
+    gpgcheck: yes
+    gpgkey: https://packages.microsoft.com/keys/microsoft.asc
+
+- name: Update package cache
+  command: dnf check-update
+
+- name: Install VSCode
+  dnf:
+    name: "{{ visual_studio_code_package }}"
+    state: present

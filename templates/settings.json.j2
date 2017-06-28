@@ -1,0 +1,10 @@
+{
+    "editor.fontSize": {{ vs_code_font }},
+    "gitProjectManager.baseProjectsFolders": [
+    {% for folder in vs_code_gpm_base_project_folders %}
+        {{ folder }}
+        {%- if not loop.last %},{% endif %}
+    {% endfor %}
+    ],
+    "workbench.welcome.enabled": false
+}
