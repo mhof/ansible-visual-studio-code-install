@@ -1,0 +1,12 @@
+---
+- hosts: all
+  remote_user: ansible-test-user
+  become: no
+
+  vars:
+    vs_code_extensions:
+      - haaaad.ansible
+      - tht13.python
+
+  roles:
+    - role: ansible-visual-studio-code-install

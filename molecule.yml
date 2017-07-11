@@ -1,0 +1,22 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+ansible:
+  playbook: tests/playbook.yml
+  verbose: yes
+docker:
+  containers:
+    - name: ansible-visual-studio-code-install
+      image: fedora
+      image_version: 25
+      dockerfile: tests/Dockerfile
+      ansible_groups:
+        - group1
+      command: /bin/bash
+verifier:
+  name: testinfra
+  options:
+    junit-xml: target/junit.xml
+    sudo: no
